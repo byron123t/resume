@@ -1,0 +1,155 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr 
+% License : MIT
+%------------------------------------------------------------------------------
+
+\documentclass[A4,11pt]{article}
+%\documentclass[letterpaper,11pt]{article} %For use in US
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{biblatex}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage[yyyymmdd]{datetime}
+\usepackage{fontawesome5}
+\renewcommand{\dateseparator}{-}
+\input{glyphtounicode}
+\bibliography{references}
+
+
+%-----FONT OPTIONS-------------------------------------------------------------
+% serif
+ \usepackage{palatino}
+% \usepackage{times} %This is the default as well
+% \usepackage{charter}
+
+% sans-serif
+% \usepackage{helvet}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+%-----PAGE SETUP---------------------------------------------------------------
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
+
+% Margins for US Letter size
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+%\addtolength{\topmargin}{-.5in}
+%\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+%-----HEADING------------------------------------------------------------------
+
+\begin{minipage}[c]{0.1\textwidth}
+\begin{tikzpicture}
+    \clip (0,0) circle (1.25cm);
+    \node at (0.03,-0.2) {\includegraphics[width = 3cm]{portrait.png}}; 
+    % if necessary the picture may be moved by changing the at (coordinates)
+    % width defines the 'zoom' of the picture
+\end{tikzpicture}
+% \hfill\vline\hfill
+\end{minipage}
+\begin{minipage}[c]{0.05\textwidth}
+\-\
+\end{minipage}
+\begin{minipage}[c]{0.22\textwidth}
+    \textbf{\large\scshape{Brian Tang}} \\
+    \faIcon{phone-square-alt} +1 630-880-3691 \\
+    \faIcon{envelope} \href{mailto:byron123t@gmail.com}{\underline{byron123t@gmail.com}}\\
+    \faIcon{envelope} \href{mailto:bjaytang@umich.edu}{\underline{bjaytang@umich.edu}}\\\\
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+    \textbf{CV Last Updated:} \today \\
+    \href{https://www.linkedin.com/in/btang12/}{\faIcon{linkedin} \underline{https://www.linkedin.com/in/btang12/}} \\
+    \href{https://github.com/byron123t}{\faIcon{github} \underline{https://github.com/byron123t}} \\
+    \href{https://scholar.google.com/citations?user=pgkhBk8AAAAJ&hl=en}{\faIcon{google} \underline{https://scholar.google.com/citations?user=pgkhBk8AAAAJ\&hl=en}} \\
+    \href{https://www.bjaytang.com/}{\faIcon{link} \underline{https://www.bjaytang.com/}}
+    \vspace{5pt}
+\end{minipage}
+
+\input{content/010_Education}
+\input{content/020_Areas}
+\input{content/030_Experience}
+\input{content/040_Research}
+\input{content/050_Projects}
+\input{content/060_Teaching}
+\input{content/070_Mentoring}
+\input{content/080_Service}
+\input{content/090_Talks}
+\input{content/100_Patents}
+\input{content/110_Honors}
+\input{content/120_Grants}
+\input{content/130_Skills}
+\printbibliography[title=Publications|Preprints|Journals]
+
+    
+%------------------------------------------------------------------------------
+\end{document}
