@@ -14,7 +14,7 @@
 \usepackage{marvosym}
 \usepackage[margin=0.75in]{geometry}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage[maxbibnames=99]{biblatex}
+\usepackage[maxbibnames=99,sorting=ydnt]{biblatex}
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -135,13 +135,15 @@
     \vspace{5pt}
 \end{minipage}
 
+\nocite{*}
+
 \input{content/010_Education}
 \input{content/020_Areas}
 \input{content/130_Skills}
 \input{content/030_Experience}
+\printbibliography[title=Publications]
 \input{content/090_Talks}
-\input{content/040_Research}
-\input{content/050_Projects}
+% \input{content/040_Research}
 \input{content/060_Teaching}
 \input{content/070_Mentoring}
 \input{content/110_Honors}
@@ -149,7 +151,7 @@
 \input{content/100_Patents}
 \input{content/120_Grants}
 \input{content/140_References}
-\printbibliography[title=Publications|Preprints|Journals]
+\input{content/050_Projects}
 
     
 %------------------------------------------------------------------------------
