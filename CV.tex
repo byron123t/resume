@@ -23,7 +23,7 @@
 \usepackage{tikz}
 \usepackage[yyyymmdd]{datetime}
 \usepackage{fontawesome5}
-\hypersetup{colorlinks,linkcolor={red},citecolor={red},urlcolor={blue}}  
+\hypersetup{colorlinks,linkcolor={red},citecolor={red},urlcolor={teal}}  
 \renewcommand{\dateseparator}{-}
 \input{glyphtounicode}
 \bibliography{references}
@@ -31,9 +31,9 @@
 
 %-----FONT OPTIONS-------------------------------------------------------------
 % serif
- \usepackage{palatino}
+ % \usepackage{palatino}
 % \usepackage{times} %This is the default as well
-% \usepackage{charter}
+\usepackage{charter}
 
 % sans-serif
 % \usepackage{helvet}
@@ -64,8 +64,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{2pt}\scshape\raggedright\Large\color{teal}
+}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
 
 % Ensure that .pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -78,11 +78,11 @@
 }
 
 \newcommand{\CVSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \small#3 & \small #4 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-6pt}
 }
 
 \newcommand{\CVSubSubheading}[2]{
@@ -129,7 +129,8 @@
     \faIcon{envelope} \href{mailto:bjaytang@umich.edu}{\underline{bjaytang@umich.edu}}\\
 \end{minipage}
 \begin{minipage}[c]{0.5\textwidth}
-    \href{https://www.bjaytang.com/}{\faIcon{link} \LARGE{\underline{\textbf{https://www.bjaytang.com/}}}} \\
+    \normalsize{US Citizen, Authorized to Work} \\
+    \href{https://www.bjaytang.com/}{\faIcon{link} \normalsize{\underline{\textbf{https://www.bjaytang.com/}}}} \\
     \href{https://www.linkedin.com/in/bjaytang/}{\faIcon{linkedin} \normalsize{\underline{https://www.linkedin.com/in/bjaytang/}}} \\
     \href{https://github.com/byron123t}{\faIcon{github} \underline{https://github.com/byron123t}} \\
     \href{https://scholar.google.com/citations?user=pgkhBk8AAAAJ&hl=en}{\faIcon{google} \underline{https://scholar.google.com/citations?user=pgkhBk8AAAAJ\&hl=en}}
