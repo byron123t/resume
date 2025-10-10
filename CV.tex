@@ -14,7 +14,12 @@
 \usepackage{marvosym}
 \usepackage[margin=0.75in]{geometry}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage[maxbibnames=99,sorting=ydnt]{biblatex}
+\usepackage[
+  backend=biber,
+  defernumbers=true,
+  maxbibnames=99,
+  sorting=ydnt
+]{biblatex}
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -27,7 +32,6 @@
 \renewcommand{\dateseparator}{-}
 \input{glyphtounicode}
 \bibliography{references}
-
 
 %-----FONT OPTIONS-------------------------------------------------------------
 % serif
@@ -85,6 +89,15 @@
     \end{tabular*}\vspace{-6pt}
 }
 
+\newcommand{\CVSubheadingLong}[6]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+      \small#5 & \small #6 \\
+    \end{tabular*}\vspace{-6pt}
+}
+
 \newcommand{\CVSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
@@ -129,28 +142,33 @@
     \faIcon{envelope} \href{mailto:bjaytang@umich.edu}{\underline{bjaytang@umich.edu}}\\
 \end{minipage}
 \begin{minipage}[c]{0.5\textwidth}
-    \normalsize{Research Scientist, US Citizen} \\
+    \normalsize{Researcher, US Citizen} \\
     \href{https://www.bjaytang.com/}{\faIcon{link} \normalsize{\underline{\textbf{https://www.bjaytang.com/}}}} \\
     \href{https://www.linkedin.com/in/bjaytang/}{\faIcon{linkedin} \normalsize{\underline{https://www.linkedin.com/in/bjaytang/}}} \\
     \href{https://github.com/byron123t}{\faIcon{github} \underline{https://github.com/byron123t}} \\
     \href{https://scholar.google.com/citations?user=pgkhBk8AAAAJ&hl=en}{\faIcon{google} \underline{https://scholar.google.com/citations?user=pgkhBk8AAAAJ\&hl=en}}
 \end{minipage}
 
+\textbf{Thesis:} Security and Privacy Challenges with Vision-Language Models and Smart Glasses.
+
+\textbf{Mission:} Seeking a Role as a Research Scientist in AI Security, Safety, or Privacy. I wish to ensure that the harms of LLMs are minimized, by ensuring that we explore opt-out methods and unconventional LLM reasoning chains.
+
 \nocite{*}
 
 \input{content/010_Education}
-\input{content/020_Areas}
-\input{content/130_Skills}
 \input{content/030_Experience}
-\printbibliography[title=Publications and Preprints]
+\printbibliography[title=Top-Tier Publications,keyword=toptier]
+\input{content/100_Patents}
 % \input{content/040_Research}
 \input{content/120_Grants}
-\input{content/100_Patents}
+\printbibliography[title=Preprints and Small Papers,keyword=preprint]
 \input{content/110_Honors}
 \input{content/080_Service}
 \input{content/060_Teaching}
 \input{content/070_Mentoring}
-\input{content/090_Talks}
+% \input{content/090_Talks}
+\input{content/020_Areas}
+\input{content/130_Skills}
 \input{content/140_References}
 % \input{content/050_Projects}
 
