@@ -33,6 +33,12 @@
 \input{glyphtounicode}
 \bibliography{references}
 
+% Publications formatting: hide redundant "In:" label, print venue bold/teal right-aligned on its own line, show [paper] instead of full URL
+\renewbibmacro*{in:}{}
+\DeclareFieldFormat{booktitle}{\newline\hfill\textbf{\textcolor{teal}{#1}}}
+\DeclareFieldFormat{journaltitle}{\newline\hfill\textbf{\textcolor{teal}{#1}}}
+\DeclareFieldFormat{url}{\href{#1}{[paper]}}
+
 %-----FONT OPTIONS-------------------------------------------------------------
 % serif
  % \usepackage{palatino}
@@ -134,41 +140,40 @@
 % \begin{minipage}[c]{0.05\textwidth}
 % \-\
 % \end{minipage}
-\begin{minipage}[c]{0.3\textwidth}
-    \textbf{\LARGE\scshape{Brian Jay Tang}} \\
-    \textbf{Updated:} \today \\
-    \faIcon{phone-square-alt} +1 630-880-3691 \\
-    \faIcon{envelope} \href{mailto:byron123t@gmail.com}{\underline{byron123t@gmail.com}}\\
-    \faIcon{envelope} \href{mailto:bjaytang@umich.edu}{\underline{bjaytang@umich.edu}}\\
-\end{minipage}
-\begin{minipage}[c]{0.5\textwidth}
-    \normalsize{Researcher, US Citizen} \\
-    \href{https://www.bjaytang.com/}{\faIcon{link} \normalsize{\underline{\textbf{https://www.bjaytang.com/}}}} \\
-    \href{https://www.linkedin.com/in/bjaytang/}{\faIcon{linkedin} \normalsize{\underline{https://www.linkedin.com/in/bjaytang/}}} \\
-    \href{https://github.com/byron123t}{\faIcon{github} \underline{https://github.com/byron123t}} \\
-    \href{https://scholar.google.com/citations?user=pgkhBk8AAAAJ&hl=en}{\faIcon{google} \underline{https://scholar.google.com/citations?user=pgkhBk8AAAAJ\&hl=en}}
-\end{minipage}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\begin{minipage}[c]{0.34\textwidth}
+    \textbf{\Huge\scshape{Brian Tang}} \\[6pt]
+    \href{https://www.bjaytang.com/}{\faIcon{link} \textbf{\Large\textcolor{teal}{https://www.bjaytang.com}}}
+\end{minipage} &
+\begin{minipage}[c]{0.46\textwidth}
+    \raggedleft
+    \large{AI Security \& Privacy Researcher}
+\end{minipage} \\
+\end{tabular*}
+\vspace{1mm}
 
-\textbf{Thesis:} Security and Privacy Challenges with Vision-Language Models and Smart Glasses.
 
-\textbf{Mission:} Seeking a Role as a Research Scientist in AI Security, Safety, or Privacy. I wish to ensure that the harms of LLMs are minimized, by ensuring that we explore opt-out methods and unconventional LLM reasoning chains.
+\small
+\textbf{Mission:} Seeking a role as a Research Scientist or Product-Minded Researcher in AI Security, Safety, and Privacy. I build attacks, defenses, and products for LLMs, VLMs, and coding agents, and love turning research into real-world product impact. My expertise lies at the intersection of AI, human factors, product, and security \& privacy.
+\normalsize
+
+\vspace{-2mm}
 
 \nocite{*}
 
 \input{content/010_Education}
 \input{content/030_Experience}
-\printbibliography[title=Top-Tier Publications,keyword=toptier]
+\printbibliography[title=Publications,keyword=toptier]
 \input{content/100_Patents}
 % \input{content/040_Research}
 \input{content/120_Grants}
-\printbibliography[title=Preprints and Small Papers,keyword=preprint]
+\printbibliography[title=Preprints,keyword=preprint]
 \input{content/110_Honors}
-\input{content/080_Service}
-\input{content/060_Teaching}
+\input{content/090_Talks}
 \input{content/070_Mentoring}
-% \input{content/090_Talks}
 \input{content/020_Areas}
 \input{content/130_Skills}
+\input{content/080_Service}
 \input{content/140_References}
 % \input{content/050_Projects}
 
